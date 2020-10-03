@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Sidebar from './Sidebar';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <h1>chatty</h1>
 
       <div className="body">
-        {/* Sidebar */}
+        <Sidebar />
         {/* Chatty */}
       </div>
     </div>
