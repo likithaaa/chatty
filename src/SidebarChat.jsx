@@ -1,7 +1,12 @@
 import React from 'react';
-import './SidebarChat.css';
+import './Sidebar.css';
+
 function SidebarChat() {
-  return <div className="sidebarChat"></div>;
+  return (
+    <div className="sidebarChatContainer">
+      <h1>hey</h1>
+    </div>
+  );
 }
 
 export default SidebarChat;
