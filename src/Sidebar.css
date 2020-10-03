@@ -1,11 +1,12 @@
 .sidebar {
-  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  flex: 0.3;
 }
 .sidebarHeader {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  border-right: 1px solid black;
 }
 
 .sidebarRight {
