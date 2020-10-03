@@ -9,7 +9,13 @@ function SidebarChat({ newChat }) {
     setSeed(Math.floor(Math.random() * 5000));
   }, []);
 
-  const createChat = () => {};
+  const createChat = () => {
+    const roomName = prompt('Please enter a name for chat');
+
+    if (roomName) {
+      //do some database stuff
+    }
+  };
 
   return !newChat ? (
     <div className="sidebarChatContainer">
