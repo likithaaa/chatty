@@ -25,3 +25,24 @@
   background-repeat: repeat;
   background-position: center;
 }
+
+.chatMessage {
+  position: relative;
+  padding: 10px;
+  background-color: rgb(223, 223, 223);
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.chatName {
+  position: absolute;
+  top: -15px;
+  font-weight: 800;
+  font-size: xx-small;
+}
+
+.chatTime {
+  margin-left: 10px;
+  font-size: xx-small;
+}

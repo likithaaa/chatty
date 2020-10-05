@@ -38,7 +38,7 @@
 }
 
 .sidebarContainer > .MuiSvgIcon-root {
-  color: gray;
+  color: rgb(85, 23, 23);
   padding: 10px;
 }
 
@@ -61,5 +61,5 @@
 }
 
 .sidebarChatInfo {
-  margin-left: 20px;
+  margin-left: 18px;
 }

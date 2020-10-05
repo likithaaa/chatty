@@ -35,7 +35,11 @@ function Chat() {
       </div>
 
       <div className="chatBody">
-        <p className="chatMessage">Hey y'all</p>
+        <p className="chatMessage">
+          <span className="chatName">Likitha</span>
+          Hey y'all
+          <span className="chatTime">4:00pm</span>
+        </p>
       </div>
 
       <div className="chatFooter"></div>
