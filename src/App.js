@@ -11,13 +11,12 @@ function App() {
 
       <div className="body">
         <Router>
+          <Sidebar />
           <Switch>
-            <Sidebar />
             <Route path="/rooms/:roomId">
               <Chat />
             </Route>
             <Route path="/">
-              {/* <Chat /> */}
               <Chat />
             </Route>
           </Switch>
