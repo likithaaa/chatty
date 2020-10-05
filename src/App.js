@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -9,8 +10,18 @@ function App() {
       <h1>chatty</h1>
 
       <div className="body">
-        <Sidebar />
-        <Chat />
+        <Router>
+          <Switch>
+            <Sidebar />
+            <Route path="/rooms/:roomId">
+              <Chat />
+            </Route>
+            <Route path="/">
+              {/* <Chat /> */}
+              <Chat />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     </div>
   );
