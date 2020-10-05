@@ -1,4 +1,15 @@
 .chat {
   flex: 0.7;
-  background-color: hotpink;
+}
+
+.chatHeader {
+  padding: 20px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.chatHeaderInfo {
+  flex: 1;
+  padding-left: 20px;
 }
