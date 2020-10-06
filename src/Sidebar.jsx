@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 import SidebarChat from './SidebarChat';
 import { Avatar, IconButton } from '@material-ui/core';
-import DonutLargeIcon from '@material-ui/icons/DonutLarge';
-import ChatIcon from '@material-ui/icons/Chat';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { SearchOutlined } from '@material-ui/icons';
 import db from './firebase';
 import { useStateValue } from './StateProvider';
@@ -28,17 +25,7 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebarHeader">
         <Avatar src={user?.photoURL} />
-        <div className="sidebarRight">
-          <IconButton>
-            <DonutLargeIcon />
-          </IconButton>
-          <IconButton>
-            <ChatIcon />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton>
-        </div>
+        <div className="sidebarRight"></div>
       </div>
 
       <div className="sidebarSearch">
