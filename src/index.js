@@ -5,8 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
+  // data layer to push or pull info from any component
   <React.StrictMode>
-    <App />
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+    </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
