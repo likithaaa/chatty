@@ -13,6 +13,7 @@ function Chat() {
   const [seed, setSeed] = useState('');
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState('');
+  const [messages, setMessages] = useState([]);
 
   // everytime the room id changes, get new messages from the room id
   useEffect(() => {
@@ -20,6 +21,14 @@ function Chat() {
       db.collection('rooms')
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+
+      db.collection('rooms')
+        .doc(roomId)
+        .collection('messages')
+        .orderBy('TimeStamp', 'asc')
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
     }
   }, [roomId]);
 
@@ -56,11 +65,15 @@ function Chat() {
       </div>
 
       <div className="chatBody">
-        <p className={`chatMessage ${true && 'chatSender'}`}>
-          <span className="chatName">Likitha</span>
-          Hey y'all
-          <span className="chatTime">4:00pm</span>
-        </p>
+        {messages.map((message) => (
+          <p className={`chatMessage ${true && 'chatSender'}`}>
+            <span className="chatName">{message.name}</span>
+            {message.message}
+            <span className="chatTime">
+              {new Date(message.TimeStamp?.toDate()).toUTCString()}
+            </span>
+          </p>
+        ))}
       </div>
 
       <div className="chatFooter">
