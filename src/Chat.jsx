@@ -7,6 +7,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { useParams } from 'react-router-dom';
 import db from './firebase';
+import firebase from 'firebase';
+import { useStateValue } from './StateProvider';
 
 function Chat() {
   const [input, setInput] = useState('');
@@ -14,6 +16,7 @@ function Chat() {
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState('');
   const [messages, setMessages] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
 
   // everytime the room id changes, get new messages from the room id
   useEffect(() => {
@@ -39,6 +42,12 @@ function Chat() {
   const sendMessage = (e) => {
     e.preventDefault();
     console.log('You typed >>>', input);
+
+    db.collection('rooms').doc(roomId).collection('messages').add({
+      message: input,
+      name: user.displayName,
+      TimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
     setInput('');
   };
 
@@ -66,7 +75,11 @@ function Chat() {
 
       <div className="chatBody">
         {messages.map((message) => (
-          <p className={`chatMessage ${true && 'chatSender'}`}>
+          <p
+            className={`chatMessage ${
+              message.name === user.displayName && 'chatSender'
+            }`}
+          >
             <span className="chatName">{message.name}</span>
             {message.message}
             <span className="chatTime">
