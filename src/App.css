@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
 * {
   margin: 0;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.chatty {
+  font-size: 45px;
 }
 
 .app {
   display: grid;
   place-items: center;
-  background-color: rgba(92, 92, 92, 0.564);
+  background-color: rgba(130, 128, 128, 0.564);
   height: 100vh;
 }
 

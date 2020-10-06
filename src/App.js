@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>chatty</h1>
+      <h1 className="chatty">chatty</h1>
       {!user ? (
         <Login />
       ) : (
